@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page Lealene's Portfolio</title>
+
+    <style>
+
+*{
+    box-sizing:border-box;
+}
+
+body{
+    margin:0;
+}
+
+header {
+    background:rgb(87, 16, 16);
+    padding: 20px 30px;
+    display: flex;
+    flex-direction: column; 
+    position: relative;  
+    margin-bottom: 3px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+    position: absolute;      
+    bottom: 20px;            
+    right: 20px;             
+}
+
+nav a {
+    color: black;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 2px 13px;
+    border-radius: 15px;
+    background-color: rgb(170, 166, 166);
+    border: 1px solid black;
+}
+
+nav a:hover {
+    color: black;
+    background-color: white;
+}
+
+.background {
+    background-image: url("images/mainbg.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    filter: blur(13px);
+    z-index: -1;
+    }
+
+.myportfolio {
+    border: 2px solid rgb(0, 0, 0);
+    text-align: center;
+    width: 500px;
+    margin: 20px auto;
+    border-radius: 20px;
+    background-color: rgb(170, 166, 166);
+    padding: 20px;
+    font-size: 30px;
+    }
+
+.picandinfo{
+    display: flex;             
+    align-items: center;
+    gap: 140px; 
+    margin-left: 50px;                
+}
+
+.picture {
+    border-radius:30px;
+    margin-top: 0px;
+    box-shadow:0 0 20px black;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.picture:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+    filter: brightness(1.1);
+}
+
+.hi {
+    font-size: 150px;
+    color :rgb(87, 16, 16);
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.hi:hover {
+    transform: scale(1.10) ;
+    text-shadow: 4px 4px 8px rgba(87, 16, 16, 0.3);
+}
+
+
+.personal{
+    color: rgb(87, 16, 16);
+    text-align: left;
+    font-size: 40px;
+    margin-bottom: 5px;
+    margin-top: 30px;
+    margin-left: 50px;
+}
+
+.personal h3 {
+    margin: 10px;
+}
+
+.skills h3{
+    margin: 10px;
+
+}
+
+.skills {
+    color: rgb(87, 16, 16);
+    text-align: left;
+    font-size: 40px;
+    margin-bottom: 5px;
+    margin-top: 30px;
+    margin-left: 50px;
+}
+
+.skillslist {
+    font-size: 20px;
+    color: rgb(87, 16, 16);
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-left: 60px;
+    display: flex;
+    gap: 100px;
+    transition: all 0.3s ease-in-out;
+}
+
+
+.skillslist button{
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.web button {
+    margin: 10px 0px;
+    padding: 5px 10px;
+    border: 1px solid black;
+    border-radius: 15px;
+    background-color: rgb(221, 205, 175);
+    font-size: 16px;
+    display: flex;
+}
+
+.prog button {
+    margin: 10px 0px;
+    padding: 5px 10px;
+    border: 1px solid black;
+    border-radius: 15px;
+    background-color: rgb(221, 205, 175);
+    font-size: 16px;
+    display: flex;
+}
+
+.soft button {
+    margin: 10px 0px;
+    padding: 5px 10px;
+    border: 1px solid black;
+    border-radius: 15px;
+    background-color: rgb(221, 205, 175);
+    font-size: 16px;
+    display: flex;
+    
+}
+
+.web button:hover,
+.prog button:hover,
+.soft button:hover {
+    background-color: rgb(87, 16, 16);
+    color: rgb(255, 255, 255);
+    transform: translateY(-4px) scale(1.05);
+    box-shadow: 0 8px 16px rgba(87, 16, 16, 0.4);
+    border-color: rgb(255, 255, 255);
+}
+
+.infs {
+    font-size: 20px;
+    color: rgb(87, 16, 16);
+    margin-top: 0px;
+    margin-bottom: 0px;
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 30px;
+    background-image: url("images/abtmebg.jpg");
+    padding: 15px 40px;
+    width: 450px;
+    margin-left: 50px;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.infs:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(87, 16, 16, 0.4);
+}
+    
+.aboutMe { 
+    
+    color: rgb(87, 16, 16);
+    text-align: left;
+    font-size: 40px;
+    margin-bottom: 5px;
+    margin-top: 35px;
+    margin-left: 50px;
+   
+}
+
+.aboutMe h3 {
+    margin: 10px;
+}
+
+.paragraph {
+    border: 1px solid rgb(0, 0, 0);
+    text-align: center;
+    border-radius: 30px;
+    width: 800px;
+    height: auto;
+    line-height: 50px;
+    background-image:url("images/abtmebg.jpg");
+    background-position: top right;
+    padding: 10px;
+    margin-top: 0px;
+    margin-left: 50px;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.paragraph:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(87, 16, 16, 0.4);
+}
+
+.information {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+}
+
+footer {
+    background:rgb(87, 16, 16);
+    padding: 45px 30px;
+    display: flex;
+    flex-direction: column; 
+    position: relative;  
+    margin-top: 200px;
+    align-items: center;
+    color: antiquewhite;
+    text-align: center;
+}
+
+    @media (max-width: 768px) {
+
+header{
+    padding:15px;
+    width:100%;
+    margin-bottom:40px;
+    box-sizing:border-box;
+}
+
+nav ul{
+    position:static;
+    justify-content:center;
+    margin-top:10px;
+    flex-wrap:wrap;
+}
+
+.myportfolio{
+    width:90%;
+    font-size:22px;
+}
+
+.picandinfo{
+    flex-direction:column;
+    gap:10px;
+    margin-left:0;
+    text-align:center;
+}
+
+.picture{
+    width:200px;
+}
+
+.hi{
+    font-size:50px;
+}
+
+.personal{
+    margin-left:20px;
+    font-size:28px;
+}
+
+.infs{
+    width:90%;
+    max-width:800px;
+    margin:0 auto;
+    font-size:16px;
+}
+
+.aboutMe{
+    margin-left:20px;
+    font-size:28px;
+}
+
+.paragraph{
+    width:90%;
+    max-width:800px;
+    height:auto;
+    line-height:28px;
+    margin:0 auto;
+    font-size:15px;
+}
+
+footer{
+    margin-top:80px;
+    padding:30px;
+    width:100%;
+    box-sizing:border-box;
+}
+
+}
+
+    </style>
+</head>
+
+<body>
+  <div class="background"> </div>
+
+<header>
+     <h1 class="myportfolio"> Home Page </h1>
+    <nav>    
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="dashboard.html">Dashboard</a></li>
+<li><a href="uploads.html">Uploads</a></li>
+</ul>
+
+    </nav>
+    </header>
+
+<div class="picandinfo">
+    <img class="picture" src="images/mypic.jpg" alt="My Picture" style="width: 310px">
+
+    <div class="hi">
+            <p><Strong>Hi! I'm Lea</Strong></p>
+    </div>
+</div>
+
+<div class="skills">
+    <h3>Skills</h3>
+</div>
+
+<div class="skillslist">
+    <p class="web"><strong>Web Development:</strong>
+        <button> CSS</button>
+        <button> HTML</button>
+        <button> JavaScript</button>
+    </p>
+
+    <p class="prog"><strong>Programming Languages:</strong>
+        <button> C++</button>
+        <button> Java</button>
+    </p>
+
+    <p class="soft"><strong>Soft Skills:</strong>
+        <button> Communication</button>
+        <button> Problem-solving</button>
+        <button> Teamwork</button>
+    </p>
+</div>
+
+<div class="personal">
+    <h3>Personal Information</h3>
+</div>
+
+<div class="infs">
+<p><Strong>Name:</Strong>   Lealene Abrigo</p>
+            <p><strong>Student number:</strong>     251100666</p>
+            <p><strong>Course and Section: </strong>     BSCS-1D</p>
+</div>
+
+<div class="information">
+    <div class="aboutMe"><h3>About Me</h3></div>
+
+    <div class="paragraph">
+            <p> <b style="color: black">I am Lealene Abrigo, an 18-year-old first-year Computer Science student at CvSU Silang Campus.<br>
+            I chose to pursue Computer Science because I believe it is a highly practical and in-demand field
+            with diverse career opportunities and strong job security.  Although I entered this program with limited<br> prior knowledge about computers, I am fully committed to learning<br>and growing in this field.</b> </p>
+    </div>
+</div>
+
+
+<footer>Facebook: Lealene Abrigo<br>
+        Instagram: @laleiszz
+
+</footer>
+
+    </body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
